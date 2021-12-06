@@ -16,5 +16,5 @@ Same program is created with two different languages - one with Python and one w
 
 # Note
 
-For python, you must have to install below libraries to execute program with appropriate output:
+For python, you must have to install below libraries to execute program with correct output:
  - webbrowser, datetime, winsound, playsound, random, tabulate, win10toast
