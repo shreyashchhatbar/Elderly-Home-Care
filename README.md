@@ -2,7 +2,7 @@
 
 A program for reminder notification and many more features.
 
-# This is the parent folder contains two folder as pyhton and html
+# This is the parent folder contains two folder as python and html
 Same program is created with two different languages - one with Python and one with HTML, CSS, JS, Bootstrap.
 
 # Features
