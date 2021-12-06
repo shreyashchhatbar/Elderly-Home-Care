@@ -13,3 +13,8 @@ Same program is created with two different languages - one with Python and one w
 - Watch yoga and meditation videos
 - Play random melodies
 - Healthy Diet chart for above 60 years of age
+
+# Note
+
+For python, you must have to install below libraries to execute program with appropriate output:
+ - webbrowser, datetime, winsound, playsound, random, tabulate, win10toast
