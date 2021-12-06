@@ -63,7 +63,7 @@ while True:
         motd = [
             ["Age is just a number for those who know\nhow to make the most of their lives."]], [
             ["Gray hairs are a proof that you have earned\nthe most valuable thing in life\nand that is called experience which comes with age."]], [
-            ["Seniors are the most wonderful source for inspiration…..\nThey are the ones who can give us hope even in\ns2\ituations when we have lost everything."]], [
+            ["Seniors are the most wonderful source for inspiration…..\nThey are the ones who can give us hope even in\nsituations when we have lost everything."]], [
             ["Avoid doing all the mistakes all by yourself and\nmake it a beautiful life by following the\nadvice of seniors around you"]],[
             ["We are truly blessed to have seniors around us\nas they teach us things,\ngive us advices which no one else can"]]
         random_motd = random.choice(motd)
