@@ -1,2 +1,3 @@
-# Elderly-Home-Care
+# Elderly Home Care
+
 Project folder
