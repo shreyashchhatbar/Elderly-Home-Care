@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imgs/icon.png">
+    <script>
+        
+        function setRemainder(){
+            let hr, min, sec
+            hr = document.getElementById("hr").value
+            min = document.getElementById("min").value
+            sec = document.getElementById("sec").value
+            
+            if(hr > 0){
+                hr=(parseInt(hr)*60)*60
+            }
+
+            if(min > 0){
+                min=(parseInt(hr)*60)*60
+            }
+            
+            let str = document.getElementById("rem-input").value
+            
+            if(!str){
+              alert("Please enter text...")
+            }
+            else{
+              let total_miliseconds = (hr+min+sec)*1000
+              setTimeout(function(){
+                alert(str)
+              }, total_miliseconds)
+            }
+          }
+
+        function audio(){
+            document.getElementById("audio-body").innerHTML = ""
+            var x = document.createElement("AUDIO")
+            let songs = ["Ek Pyar Ka Nagma Hai Instrumental",
+                        "Kabhi Kabhi Mere Dil Me Instrumental",
+                        "Kya Hua Tera Wada Instrumental",
+                        "Lag Ja Gale Instrumental",
+                        "Ruk Jaana Nahi Instrumental"
+                        ]
+
+            let random_songs = Math.floor(Math.random() * songs.length)
+            let str_song_path = "songs/"+songs[random_songs]+".mp3"
+
+            if (x.canPlayType("audio/mpeg")) {
+                x.setAttribute("src", str_song_path)
+            }
+
+            x.setAttribute("controls", "controls")
+            document.getElementById("audio-body").innerHTML = "Playing <b>"+songs[random_songs]+"</b><br><br>"
+            document.getElementById("audio-body").appendChild(x)
+        }
+
+        function motd(){
+            let msg_arr = ["Age is just a number for those who know how to make the most of their lives.", 
+                            "Gray hairs are a proof that you have earned the most valuable thing in life and that is called experience which comes with age.",
+                            "Seniors are the most wonderful source for inspiration... They are the ones who can give us hope even in situations when we have lost everything.",
+                            "Avoid doing all the mistakes all by yourself and make it a beautiful life by following the advice of seniors around you.",
+                            "We are truly blessed to have seniors around us as they teach us things, give us advices which no one else can"
+                          ]
+            let motd = Math.floor(Math.random() * msg_arr.length);
+            document.getElementById("motd-body").innerHTML = msg_arr[motd]
+        }
+    </script>
+
+    <title>Elderly Home Care</title>
+</head>
+<body>
+    <div class="container">
+        <section id="athlete"><br>
+            <h2 style="text-align: center;">
+              <img src="imgs/icon.png" height="72" width="72" draggable="false"><br>
+              Elderly Home Care
+            </h2><hr width="80%" >
+            </span><br>
+
+            <div style="grid-area: a; align-self: center; justify-self: center; width: 100%;">
+                    <div class="input_head"><span style="color: #0088FF;">› </span>Set reminder notification </div>
+                    <div class="form-group" style="margin-left: 60px; margin-top: 20px; columns: 4;">
+                        <div class="input_title">What do you want to remind of: </div>
+                        <div>
+                            <input class="form-control" type="txet" id="rem-input" placeholder="Enter text" required>
+                        </div><br>
+                        <div class="input_title">Hours: </div>
+                        <div>
+                            <input class="form-control" type="number" min="0" max="24" id="hr" value="0" placeholder="Enter hours" required>
+                        </div><br>
+                        <div class="input_title">Minutes: </div>
+                        <div>
+                            <input class="form-control" type="number" min="0" max="59" id="min" value="0" placeholder="Enter minutes" required>
+                        </div><br>
+                        <div class="input_title">Seconds: </div>
+                        <div>
+                            <input class="form-control" type="number" min="0" max="59" id="sec" value="1" placeholder="Enter seconds" required>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-left: 60px; margin-top: -3%;">
+                        <button class="btn btn-primary" type="submit" placeholder="Enter seconds" style="width: 100%;" onclick="setRemainder()">Set reminder</button>
+                    </div>
+                    
+                    <div class="input_head"><span style="color: #0088FF;">› </span>Check average heart rate for above 60 years of age </div>
+                    <div class="form-group" style="margin-left: 60px; margin-top: 20px;">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Click here to know
+                          </button>
+                          
+                          <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Average heart rate for above 60 years of age</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body" id="test-body">
+                                  <table class="table table-hover">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Age</th>
+                                        <th scope="col">Target Heart Rate Zone</th>
+                                        <th scope="col">Average Maximum Heart Rate</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td scope="row">60 years</td>
+                                        <td>80-176 bpm</td>
+                                        <td>160 bpm</td>
+                                      </tr>
+                                      <tr>
+                                        <td scope="row">65 years</td>
+                                        <td>78-132 bpm</td>
+                                        <td>155 bpm</td>
+                                      </tr>
+                                      <tr>
+                                        <td scope="row">70 years</td>
+                                        <td>75-128 bpm</td>
+                                        <td>150 bpm</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                                <div class="modal-footer">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+
+                    <div class="input_head"><span style="color: #0088FF;">› </span>Message of the day </div>
+                    <div class="form-group" style="margin-left: 60px; margin-top: 20px;">
+                        <p>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" onclick="motd()" aria-expanded="false" aria-controls="collapseExample">
+                              Click here
+                            </a>
+                          </p>
+                          <div class="collapse" id="collapseExample">
+                            <div class="card card-body" id="motd-body">
+                              ...
+                            </div>
+                          </div>
+                    </div>
+                    
+                    <div class="input_head"><span style="color: #0088FF;">› </span>Watch yoga and meditation videos </div>
+                    <div class="form-group" style="margin-left: 60px; margin-top: 20px;">
+                        <div class="list-group">
+                            <a href="https://www.youtube.com/watch?v=KEx-y2IFnlw" target="_blank" class="list-group-item list-group-item-action">Click to play - <b>Gentle Yoga Asanas for 60 to 70 year olds</b></a>
+                            <a href="https://www.youtube.com/watch?v=a8IKp0znasY" target="_blank" class="list-group-item list-group-item-action">Click to play - <b>Seated Exercises for Older Adults</b></a>
+                            <a href="https://www.youtube.com/watch?v=l00InLrEb7o" target="_blank" class="list-group-item list-group-item-action">Click to play - <b>Simple Excerise Yoga for seniors by Swami Ramdev</b></a>
+                            <a href="https://www.youtube.com/watch?v=s6rXVM8VIWc" target="_blank" class="list-group-item list-group-item-action">Click to play - <b>Guided Meditation for Seniors and Older Adults</b></a>
+                            <a href="https://www.youtube.com/watch?v=s7R1Qec2_D0" target="_blank" class="list-group-item list-group-item-action">Click to play - <b>Meditation to Empower a Healthy Life</b></a>
+                          </div>
+                    </div>
+
+                    <div class="input_head"><span style="color: #0088FF;">› </span>Play random melodies </div>
+                    <div class="form-group" style="margin-left: 60px; margin-top: 20px;">
+                        <buttom class="btn btn-primary" type="button" onclick="audio()">Click here to play random melodies</buttom>
+                    </div>
+                    <div id = "audio-body" style="margin-left: 60px; margin-top: 20px;"></div>
+
+                    <div class="input_head"><span style="color: #0088FF;">› </span>Healthy Diet chart for above 60 years of age </div>
+                    <div class="form-group" style="margin-left: 60px; margin-top: 20px;">
+                        <div class="row">
+                            <div class="col-4">
+                              <div class="list-group" id="list-tab" role="tablist">
+                                <a class="list-group-item list-group-item-action active" id="list-veg-list" data-toggle="list" href="#list-veg" role="tab" aria-controls="veg">Veg</a>
+                                <a class="list-group-item list-group-item-action" id="list-nonveg-list" data-toggle="list" href="#list-nonveg" role="tab" aria-controls="nonveg">Non-Veg</a>
+                              </div>
+                            </div>
+                            <div class="col-8">
+                              <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="list-veg" role="tabpanel" aria-labelledby="list-veg-list">
+                                  <img src="imgs/veg.jpg" style="border: 4px solid #0088FF; border-radius: 10px;">
+                                </div>
+                                <div class="tab-pane fade" id="list-nonveg" role="tabpanel" aria-labelledby="list-nonveg-list">
+                                  <img src="imgs/nonveg.jpg" style="border: 4px solid #0088FF; border-radius: 10px;">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+        </div>
+        </div>
+    </section>
+</body>
+</html>

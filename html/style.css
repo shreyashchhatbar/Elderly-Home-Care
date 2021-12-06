@@ -1,0 +1,18 @@
+.padding{
+    padding: 10px;
+}
+
+.input_head{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.input_title{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.button_reg{
+    text-align: center;
+    text-transform: uppercase;
+}
